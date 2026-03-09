@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>保健の学習 - クイズ形式問題集</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-decor">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>保健の学習 <span class="badge">Quiz</span></h1>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+            <div class="stats">
+                <span id="question-number">第 1 問</span>
+                <span id="score-display">スコア: 0</span>
+            </div>
+        </header>
+
+        <section id="menu-area" class="card">
+            <h2>学習する分野を選択してください</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="health">保健 (Health)</button>
+                <button class="tab-btn" data-category="pe">体育 (P.E.)</button>
+            </div>
+            <div id="chapter-list" class="chapter-grid">
+                <!-- 章のリストはJSで生成 -->
+            </div>
+        </section>
+
+        <section id="difficulty-area" class="card hidden">
+            <button id="difficulty-back-btn" class="text-btn">← 章選択に戻る</button>
+            <h2>難易度を選択してください</h2>
+            <div class="difficulty-options">
+                <button class="diff-btn basic" data-diff="basic">
+                    <span class="diff-title">初級 (Basic)</span>
+                    <span class="diff-desc">4択形式 / 基礎的な内容の確認</span>
+                </button>
+                <button class="diff-btn advanced" data-diff="advanced">
+                    <span class="diff-title">上級 (Advanced)</span>
+                    <span class="diff-desc">5択形式 / より詳細な知識が必要</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="quiz-area" class="card hidden">
+            <div class="quiz-header">
+                <button id="back-to-menu-btn" class="text-btn">← 戻る</button>
+                <div id="chapter-title" class="chapter-title-label">章見出し</div>
+            </div>
+            <div id="question-text" class="question">読み込み中...</div>
+            <div id="options" class="options-grid">
+                <!-- オプションはJavaScriptで生成 -->
+            </div>
+            <div id="feedback" class="feedback-area hidden">
+                <div id="feedback-message"></div>
+                <button id="next-btn" class="primary-btn">次の問題へ</button>
+            </div>
+        </section>
+
+        <section id="result-area" class="card hidden">
+            <h2>結果発表</h2>
+            <div class="final-score-container">
+                <div class="final-score" id="final-score">0</div>
+                <div class="score-label">点</div>
+            </div>
+            <div class="result-actions">
+                <button id="retry-btn" class="primary-btn">もう一度挑戦</button>
+                <button id="home-btn" class="secondary-btn">メニューに戻る</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
